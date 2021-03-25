@@ -4,3 +4,10 @@ export function fetchUsers(users) {
         payload: users
     };
 }
+
+export function updateUsers(userData) {
+    return {
+        type: "UPDATE_USERS",
+        payload: userData
+    }
+}

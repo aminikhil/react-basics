@@ -15,3 +15,15 @@ export async function createUser(data) {
     const result = await response.json();
     return result;
 }
+
+export async function updateUser(id, data) {
+    const response = await fetch("http://localhost:4300/updateUser?id=" + id, {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+            'content-type': "application/json"
+        }
+    });
+    const result = await response.json();
+    return result;
+}

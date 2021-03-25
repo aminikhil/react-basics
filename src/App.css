@@ -48,3 +48,9 @@ th {
   border-collapse: collapse;
   padding: 4px;
 }
+.links {
+  padding: 36px 8px;
+}
+.links a {
+  margin: 8px;
+}
