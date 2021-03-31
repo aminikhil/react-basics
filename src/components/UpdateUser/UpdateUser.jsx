@@ -20,6 +20,7 @@ const UpdateUser = () => {
 
   return (
     <div>
+      <h4>Update User</h4>
       <input
         value={id}
         onChange={(event) => setId(event.target.value)}

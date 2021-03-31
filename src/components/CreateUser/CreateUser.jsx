@@ -16,6 +16,7 @@ const CreateUser = () => {
 
   return (
     <form>
+      <h4>Create User</h4>
       <input
         value={id}
         onChange={(event) => setId(event.target.value)}

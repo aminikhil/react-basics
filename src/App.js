@@ -5,36 +5,31 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import reducer from './redux/reducer';
 
-import Home from './components/Home';
-import CreateUser from './components/CreateUser';
-import UpdateUser from './components/UpdateUser';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import firebase from 'firebase';
+import PrivateRoute from './components/PrivateRoute';
 
 const PageNotFound = () => {
   return <div>Page not found</div>
 }
 
-
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-
 function App() {
+
 
   return (
     <Provider store={store}>
       <Router>
-        <div className="links">
-          <NavLink exact to="/" activeClassName="active">Home</NavLink>
-          <NavLink to="/create-user" activeClassName="active">Create User</NavLink>
-          <NavLink to="/update-user" activeClassName="active">Update User</NavLink>
-        </div>
-
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/create-user" component={CreateUser} />
-          <Route path="/update-user" component={UpdateUser} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <PrivateRoute />
           <Route path="*" component={PageNotFound} />
         </Switch>
-      </Router></Provider>
+      </Router>
+    </Provider>
 
   );
 }
